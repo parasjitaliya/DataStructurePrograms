@@ -103,3 +103,22 @@ class Linkedlist:
             return
         prevNode.next = currentNode.next
         currentNode = None
+
+    # creating function for sort the linkedlist
+    def sortlinklist(self, currentNode):
+        if self.head == None:
+            self.head = currentNode
+        else:
+            prevNode = self.head
+            if prevNode.data > currentNode.data:
+                currentNode.next = prevNode
+                self.head = currentNode
+            else:
+                nextNode = prevNode.next
+                while prevNode.next != None:
+                    if (nextNode.data > currentNode.data):
+                        break
+                    prevNode = prevNode.next
+                    nextNode = nextNode.next
+            currentNode.next = nextNode
+            prevNode.next = currentNode
