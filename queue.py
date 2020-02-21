@@ -16,6 +16,7 @@ class Queue:
 
     # Checks if stack is empty
     def is_empty(self):
+        # check the first node is none
         if self.rare is None:
             return True
         else:
@@ -37,15 +38,17 @@ class Queue:
 
     # Creating a function for dqueue
     def dequeue(self):
+        # check the queue is empty or not
         if Queue.is_empty(self):
             return "Queue is empty"
         else:
+            #check for next of front
             if self.front.next == None:
                 self.front == None
             else:
                 self.front = self.front.next
                 self.count -= 1
-#found the size of the stack
+    #found the size of the stack
     def size(self):
         #return the count number
         return self.count
