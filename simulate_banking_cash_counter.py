@@ -15,8 +15,9 @@ for i in range(count):
 while count > 0:
     if count == 0:
         break
-    # printing the options available for customer
+    # value assign to the variable
     total_money = 50000
+    # printing the options available for customer
     print("--------------Welcome--------------")
     print(" 1  Deposit")
     print(" 2  WithDraw")
@@ -36,11 +37,14 @@ while count > 0:
         total_money = total_money + deposit
         print(f'{deposit} amount is deposited')
         print(f'{total_money} is your total amount in your account ')
+        #check valid input or not and handle the exception
         while True:
             try:
                 exit_b = int(input("you want to exit then press 1 else 2"))
                 if exit_b is 1:
+                    # call the method for exit
                     obj.dqueue()
+                    # calculate the count after exit
                     count = count-1
                     break
                 elif exit_b is 2:
@@ -55,13 +59,16 @@ while count > 0:
         total_money = total_money - withdraw
         print(f'{withdraw} amount is deposited ')
         print(f'{total_money} is your total amount in your account ')
+        # check valid input or not and handle the exception
         while True:
             try:
                 exit_b = int(input("you want to exit then press 1 else 2"))
                 if exit_b is 1:
-                     obj.dequeue()
-                     count = count-1
-                     break
+                    # call the method for exit
+                    obj.dqueue()
+                    # calculate the count after exit
+                    count = count - 1
+                    break
                 elif exit_b is 2:
                     break
             except:
@@ -83,17 +90,21 @@ while count > 0:
     elif inp == 5:
         # 5 to show the balance money at the cashier
         print(f'Balance is {total_money} ')
+        # check valid input or not and handle the exception
         while True:
             try:
                 exit_b = int(input("you want to exit then press 1 else 2"))
                 if exit_b is 1:
-                    obj.dequeue()
-                    count = count-1
+                    # call the method for exit
+                    obj.dqueue()
+                    # calculate the count after exit
+                    count = count - 1
                     break
                 elif exit_b is 2:
                     break
             except:
                 print("Entered wrong selection, Please choose correct one")
+
     elif inp == 6:
         #6 total persons in the queue
         print("reaming persons in the queue", obj.size())
